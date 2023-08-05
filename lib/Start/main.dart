@@ -1,6 +1,19 @@
 import 'package:flutter/material.dart';
-import '../screens/main_screen.dart';
+import 'package:multiple_file_deleter/screens/file_deletion_screen.dart';
 
 void main() {
-  runApp(const MyApp());
+  runApp(MaterialApp(
+    theme: ThemeData(
+      primaryColor: Colors.blue,
+      hintColor: Colors.blueAccent,
+      fontFamily: 'Montserrat',
+    ),
+    home: Scaffold(
+      appBar: AppBar(
+        title: const Text('Flutter File Delete'),
+        centerTitle: true,
+      ),
+      body: const FileDeleteScreen(),
+    ),
+  ));
 }
