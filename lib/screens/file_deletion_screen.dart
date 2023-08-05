@@ -2,15 +2,16 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import '../utils/file_utils.dart';
 
-
 class FileDeleteScreen extends StatefulWidget {
+  const FileDeleteScreen({super.key});
   @override
+  // ignore: library_private_types_in_public_api
   _FileDeleteScreenState createState() => _FileDeleteScreenState();
 }
 
 class _FileDeleteScreenState extends State<FileDeleteScreen> {
-  TextEditingController _parentFolderPathController = TextEditingController();
-  TextEditingController _preserveFileNameController = TextEditingController();
+  final TextEditingController _parentFolderPathController = TextEditingController();
+  final TextEditingController _preserveFileNameController = TextEditingController();
   String _message = '';
 
   @override
@@ -26,40 +27,40 @@ class _FileDeleteScreenState extends State<FileDeleteScreen> {
             height: 100,
             color: Theme.of(context).hintColor,
           ),
-          SizedBox(height: 32),
+          const SizedBox(height: 32),
           TextField(
             controller: _parentFolderPathController,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: 'Enter Parent Folder Path',
               border: OutlineInputBorder(),
             ),
           ),
-          SizedBox(height: 16),
+          const SizedBox(height: 16),
           TextField(
             controller: _preserveFileNameController,
-            decoration: InputDecoration(
+            decoration: const InputDecoration(
               labelText: 'Enter File Name to Preserve (e.g., english.vtt)',
               border: OutlineInputBorder(),
             ),
           ),
-          SizedBox(height: 32),
+          const SizedBox(height: 32),
           ElevatedButton(
             onPressed: () {
               String parentFolderPath = _parentFolderPathController.text;
               String preserveFileName = _preserveFileNameController.text;
               _deleteFiles(parentFolderPath, preserveFileName);
             },
-            child: Text('Delete VTT Files'),
             style: ElevatedButton.styleFrom(
-              padding: EdgeInsets.symmetric(horizontal: 24, vertical: 16),
-              primary: Theme.of(context).primaryColor,
-              textStyle: TextStyle(fontSize: 18),
+              padding: const EdgeInsets.symmetric(horizontal: 24, vertical: 16),
+              backgroundColor: Theme.of(context).primaryColor,
+              textStyle: const TextStyle(fontSize: 18),
             ),
+            child: const Text('Delete VTT Files'),
           ),
-          SizedBox(height: 24),
+          const SizedBox(height: 24),
           Text(
             _message,
-            style: TextStyle(fontSize: 16),
+            style: const TextStyle(fontSize: 16),
           ),
         ],
       ),
