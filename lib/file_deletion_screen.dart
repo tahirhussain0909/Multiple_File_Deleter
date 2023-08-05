@@ -1,6 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
-import '../utils/file_utils.dart';
+import 'file_utils.dart';
 
 class FileDeleteScreen extends StatefulWidget {
   const FileDeleteScreen({super.key});

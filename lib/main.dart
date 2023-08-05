@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:multiple_file_deleter/screens/file_deletion_screen.dart';
+import 'package:multiple_file_deleter/file_deletion_screen.dart';
 
 void main() {
   runApp(MaterialApp(
