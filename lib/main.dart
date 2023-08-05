@@ -2,7 +2,6 @@ import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'file_utils.dart';
 
-
 void main() {
   runApp(MaterialApp(
     theme: ThemeData(
@@ -75,7 +74,7 @@ class _FileDeleteScreenState extends State<FileDeleteScreen> {
               backgroundColor: Theme.of(context).primaryColor,
               textStyle: const TextStyle(fontSize: 18),
             ),
-            child: const Text('Delete VTT Files'),
+            child: const Text('Delete VTT and SRT Files'),
           ),
           const SizedBox(height: 24),
           Text(
@@ -95,7 +94,8 @@ class _FileDeleteScreenState extends State<FileDeleteScreen> {
       return;
     }
 
-    deleteVttFiles(parentFolderPath, preserveFileName);
+    deleteSubtitleFiles(
+        parentFolderPath, preserveFileName); // Updated function name
     setState(() {
       _message = 'Check the console for file deletion messages.';
     });

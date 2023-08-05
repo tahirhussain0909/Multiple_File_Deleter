@@ -1,6 +1,6 @@
 import 'dart:io';
 
-void deleteVttFiles(String parentFolderPath, String preserveFileName) {
+void deleteSubtitleFiles(String parentFolderPath, String preserveFileName) {
   try {
     final directory = Directory(parentFolderPath);
     if (!directory.existsSync()) {
@@ -11,7 +11,7 @@ void deleteVttFiles(String parentFolderPath, String preserveFileName) {
     directory.listSync(recursive: true).forEach((FileSystemEntity entity) {
       if (entity is File) {
         String fileName = entity.uri.pathSegments.last;
-        if (fileName.toLowerCase().endsWith(".vtt") &&
+        if (fileName.toLowerCase().endsWith(".srt") &&
             fileName.toLowerCase() != preserveFileName.toLowerCase()) {
           try {
             entity.deleteSync();
